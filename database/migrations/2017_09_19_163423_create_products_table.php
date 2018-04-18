@@ -18,15 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('name')->unique();
             $table->integer('price');
             $table->integer('warranties');
-            $table->string('image');
-            $table->string('feature');//đặc tính
-            $table->string('structure');
-            $table->string('standard');//tiêu chuẩn
-            $table->string('note');
+            $table->string('producer')->nullable();
             $table->string('description');
-            $table->string('review');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade'); 
+            $table->integer('sub_category_id-1')->unsigned();
+            $table->foreign('sub_category_id-1')->references('id')->on('sub_category1s')->onDelete('cascade');
 
         });
     }

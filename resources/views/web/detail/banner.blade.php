@@ -1,4 +1,15 @@
-<!-- banner -->
+
+<script language="text/javascript">
+
+
+    var app = new Vue({
+        el: '#mesage',
+        data: {
+            message: "Học VueJS tại Freetuts.net"
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><!-- banner -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
