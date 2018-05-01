@@ -1,93 +1,144 @@
 @extends('admin.category.home')
 
 @section('content-category')
-    <div class="container">
+
+    <div class="container" id="category">
         <div class="row">
             <h4>Thêm loại sản phẩm</h4>
         </div>
-        <div class="row">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="alert alert-danger" v-bind:style="alert">
+            <ul>
+                <li>vui lòng chọn danh mục sản phẩm</li>
+            </ul>
+        </div>
+        <div class="alert alert-danger" v-bind:style="alert1">
+            <ul>
+                <li>vui lòng chọn danh mục con sản phẩm</li>
+            </ul>
+        </div>
+        <div class="row" >
             <div class="col">
-                <table class="table table-bordered table-hover">
-                    <thead class="bg-success">
-                    <tr >
-                        <th scope="col" colspan="3"><h4 class="table-admin">Thêm loại chính</h4></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">
-                                <input type="text" class="form-control"  placeholder="Thêm loại chính" name="color">
-                            </th>
-                            <th><button class="btn btn-success" >Thêm </button></th>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="col-sm-12 bg-success cateHeader">
+                    <h4 class="table-admin">Thêm danh mục chính</h4>
+                </div>
+                <div class="row cateBorder">
+                    <form method="post" action="{{ route('admin.category.store') }}" class="cateForm">
+                        @csrf
+                        <div class="col-sm-8 form-group cateInput">
+                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Thêm" v-model="message">
+                        </div>
+                        <div class="col-sm-4 cateInput">
+                            <button class="btn btn-success">Thêm</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="col">
-                <table class="table table-bordered table-hover">
-                    <thead class="bg-success">
-                    <tr >
-                        <th scope="col" colspan="3"><h4 class="table-admin">Thêm danh mục con</h4></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" colspan="2">
-                                <select name=""  class="select-admin">
-                                    <option value="" selected disabled>danh mục con</option>
-                                    <option value="">abc</option>
-                                    <option value="">abc</option>
-                                    <option value="">abc</option>
-                                </select>
-                            </th>
-                        </tr>
-                    <tr>
-                        <th><input type="text" class="form-control"  placeholder="Thêm danh mục con" name="color">
-                        </th>
-                        <th><button class="btn btn-success" >Thêm</button></th>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="col-sm-12 bg-success cateHeader">
+                    <h4 class="table-admin">Thêm danh mục con</h4>
+                </div>
+                <form action="{{ route('admin.subCategory.store') }}" method="post" @submit="checkForm">
+                    @csrf
+                    <div class="row subcateBorder">
+                        <select class="select-admin" v-model="category_id" name="category_id">
+                            <option value="" selected disabled>loại chính</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>    
+                    </div>
+                    <div class="row cateBorder">
+                        <div class="col-sm-8 form-group  cateInput">
+                            <input type="text" name="subCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Thêm" >
+                        </div>
+                        <div class="col-sm-4 cateInput">
+                            <button class="btn btn-success" type="submit">Thêm</button>
+                        </div>
+                    </div>
+                </form>
+                
             </div>
             <div class="col">
-                <table class="table table-bordered table-hover">
-                    <thead class="bg-success">
-                    <tr >
-                        <th scope="col" colspan="3"><h4 class="table-admin">Thêm danh mục nhỏ</h4></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" colspan="2">
-                                <select name=""  class="select-admin">
-                                    <option value="" selected disabled>loại chính</option>
-                                    <option value="">abc</option>
-                                    <option value="">abc</option>
-                                    <option value="">abc</option>
-                                </select>
-                            </th>
-                        </tr>
-                    <tr>
-                        <th scope="row" colspan="2">
-                            <select name=""  class="select-admin">
-                                <option value="" selected disabled>danh mục con</option>
-                                <option value="">abc</option>
-                                <option value="">abc</option>
-                                <option value="">abc</option>
-                            </select>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th><input type="text" class="form-control"  placeholder="Thêm danh mục nhỏ" name="color">
-                        </th>
-                        <th><button class="btn btn-success" >Thêm</button></th>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="col-sm-12 bg-success cateHeader">
+                    <h4 class="table-admin">Thêm danh mục con</h4>
+                </div>
+                <form method="post" action="{{ route('admin.subMiniCategory.store') }}" @submit="checkForm1">
+                    @csrf
+                    
+                    <div class="row cateBorder">
+                        <select name="sub_category_id"  class="select-admin" v-model="subCategory_id">
+                            <option value="" selected disabled>danh mục con</option>
+                            @foreach($subCategories as $subCategory)
+                            <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="row cateBorder">
+                        <div class="col-sm-8 form-group  cateInput">
+                            <input type="text" name="subMiniCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Thêm" >
+                        </div>
+                        <div class="col-sm-4 cateInput">
+                            <button class="btn btn-success" >Thêm</button>
+                        </div>
+                    </div>
+                </form>
             </div>
+            
         </div>
 
-        </div>
     </div>
 
+
+    <script type="text/javascript">
+        
+        new Vue({
+            el: '#category',
+            data: {
+                selected: '',
+                category_id: '',
+                subCategory_id: '',
+                message: '',
+                alert: {
+                    display: 'none',
+
+                },
+                alert1:  {
+                    display: 'none',
+                }
+            },
+            methods: {
+                checkForm: function (e) {
+                
+                if (!this.category_id){
+                    this.alert.display = 'block';
+                    e.preventDefault();
+                }
+                else
+                    return true;                 
+                },
+                checkForm1:function(e) {
+                    
+                        
+                        if(!this.subCategory_id){
+                            this.alert1.display = 'block';
+                        }
+                        else
+                            return true;
+                    
+                    e.preventDefault();
+                }
+            },
+            
+        });
+
+    </script>
 @endsection

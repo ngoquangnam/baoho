@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\SubCategory;
-
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        $subCategories = SubCategory::all();
-        return view('admin.category.new',compact('categories', 'subCategories'));
+        //
     }
 
     /**
@@ -40,25 +36,30 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-        ], [
-            'name.required' => 'vui lòng nhập loại sản phẩm chính'
+        $Validator = Validator::make($request->all(), 
+        [
+            'category_id' => 'required',
+            'subCategory' => 'required'
+        ], 
+
+        [
+            'category_id.required' => 'vui lòng chọn loại sản phẩm',
+            'subCategory.required' => 'vui lòng nhập danh mục sản phẩm con'
         ]);
-        if ($validator->fails())
+
+        if($Validator->fails())
         {
-           return redirect()->back()
-           ->withErrors($validator)
-           ->withInput();
+            return redirect()->back()
+            ->withErrors($Validator)
+            ->withInput();
         }
-        else
-        {
-            $category = new Category();
-            $category->name = $request->name;
-            $category->save();
+        else{
+            $subCategory = new SubCategory();
+            $subCategory->name = $request->subCategory;
+            $subCategory->category_id = $request->category_id;
+            $subCategory->save();
             return redirect()->back();
         }
-
     }
 
     /**

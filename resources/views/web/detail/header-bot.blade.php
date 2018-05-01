@@ -10,7 +10,7 @@
         </div>
         <!-- header-bot -->
         <div class="col-md-4 logo_agile">
-            <h1><a href="index.html"><span>E</span>lite Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag"
+            <h1><a href="index.html"><span>BHLĐ</span>Đức Sơn<i class="fa fa-shopping-bag top_logo_agile_bag"
                                                                   aria-hidden="true"></i></a></h1>
         </div>
         <!-- header-bot -->

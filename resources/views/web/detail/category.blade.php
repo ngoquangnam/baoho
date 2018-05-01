@@ -5,64 +5,29 @@
             <div class="col-sm-3">
                 <div class="left-sidebar">
 
-                    <h2>Category</h2>
+                    <h2 style="font-size: 23px;">Danh mục sản phẩm</h2>
                     <div class="panel-group category-products" id="accordian">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#141">
-                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Mobile Phone
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="141" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="http://project.test/shopping/loaisanpham/19">Mobile Phone 3G</a>
-                                        </li>
-                                        <li><a href="http://project.test/shopping/loaisanpham/20">Mobile Phone 4G</a>
-                                        </li>
-                                    </ul>
+                        @foreach($categories as $category)
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#{{ $category->id }}">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            {{ $category->name }}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="{{ $category->id }}" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                           @foreach($category->subCategories as $subCategory)
+                                            <li><a href="">{{ $subCategory->name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#151">
-                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Computer
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="151" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="http://project.test/shopping/loaisanpham/17">Laptop</a></li>
-                                        <li><a href="http://project.test/shopping/loaisanpham/18">Pc</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#161">
-                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Cooking tool
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="161" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="http://project.test/shopping/loaisanpham/21">Metal</a></li>
-                                        <li><a href="http://project.test/shopping/loaisanpham/22">Plastic</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="brands_products">
                         <h2>Brands</h2>
@@ -87,7 +52,7 @@
             <div class="col-sm-9 padding-right">
 
                 <div class="features_items">
-                    <h2 class="title text-center">Features Items</h2>
+                    <h2 class="title text-center">SẢN PHẨM BÁN CHẠY</h2>
 
                     <div class="row">
 

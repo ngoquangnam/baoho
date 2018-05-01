@@ -36,5 +36,8 @@ Route::group(['prefix' => 'materials'], function () {
 
 Route::group(['prefix' => 'categories'], function () {
     Route::get('/', 'CategoryController@index')->name('admin.category.index');
+    Route::post('/store', 'CategoryController@store')->name('admin.category.store');
+    Route::post('/store/subCategory', 'SubCategoryController@store')->name('admin.subCategory.store');
+    Route::post('/store/subMiniCategory', 'SubMiniCategoryController@store')->name('admin.subMiniCategory.store');
 });
 

@@ -17,9 +17,9 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav menu__list">
-                            <li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Home
+                            <li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Trang chủ
                                 <span class="sr-only">(current)</span></a></li>
-                            <li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
+                            <li class=" menu__item"><a class="menu__link" href="about.html">Thông tin</a></li>
                             <li class="dropdown menu__item">
                                 <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">Men's wear <span class="caret"></span></a>
@@ -89,15 +89,8 @@
                                     </div>
                                 </ul>
                             </li>
-                            <li class="menu__item dropdown">
-                                <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Short
-                                    Codes <b class="caret"></b></a>
-                                <ul class="dropdown-menu agile_short_dropdown">
-                                    <li><a href="icons.html">Web Icons</a></li>
-                                    <li><a href="typography.html">Typography</a></li>
-                                </ul>
-                            </li>
-                            <li class=" menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+                           
+                            <li class=" menu__item"><a class="menu__link" href="contact.html">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>

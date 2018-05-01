@@ -20,8 +20,9 @@ class CreateProductsTable extends Migration
             $table->integer('warranties');
             $table->string('producer')->nullable();
             $table->string('description');
-            $table->integer('sub_category_id-1')->unsigned();
-            $table->foreign('sub_category_id-1')->references('id')->on('sub_category1s')->onDelete('cascade');
+            $table->string('priority');
+            $table->integer('sub_mini_category_id')->unsigned();
+            $table->foreign('sub_mini_category_id')->references('id')->on('sub_categories')->onDelete('cascade');
 
         });
     }

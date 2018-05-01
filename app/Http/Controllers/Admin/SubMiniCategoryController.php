@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Validator;
-use App\SubCategory;
+use App\SubMiniCategory;
 
-class CategoryController extends Controller
+class SubMiniCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        $subCategories = SubCategory::all();
-        return view('admin.category.new',compact('categories', 'subCategories'));
+        //
     }
 
     /**
@@ -40,25 +36,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-        ], [
-            'name.required' => 'vui lòng nhập loại sản phẩm chính'
-        ]);
-        if ($validator->fails())
-        {
-           return redirect()->back()
-           ->withErrors($validator)
-           ->withInput();
-        }
-        else
-        {
-            $category = new Category();
-            $category->name = $request->name;
-            $category->save();
-            return redirect()->back();
-        }
-
+        $subMiniCategory = new SubMiniCategory();
+        $subMiniCategory->sub_category_id = $request->sub_category_id;
+        $subMiniCategory->name = $request->subMiniCategory;
+        $subMiniCategory->save();
+        return redirect()->back();
     }
 
     /**

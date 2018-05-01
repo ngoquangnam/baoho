@@ -1,13 +1,13 @@
 <!-- /new -->
 <div class="new_arrivals_agile_w3ls_info">
     <div class="container">
-        <h3 class="wthree_text_info">New <span>Arrivals</span></h3>
+        <h3 class="wthree_text_info">SẢN PHẨM <span>NỔI BẬT</span></h3>
         <div id="horizontalTab">
             <ul class="resp-tabs-list">
-                <li> Men's</li>
-                <li> Women's</li>
-                <li> Bags</li>
-                <li> Footwear</li>
+                <li> Giày BHLĐ</li>
+                <li> Quần áo BHLĐ</li>
+                <li> Thiết bị an toàn</li>
+                <li> Thiết bị kim khí</li>
             </ul>
             <div class="resp-tabs-container">
                 <!--/tab_one-->
