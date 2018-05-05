@@ -6,7 +6,8 @@ Route::group(['prefix' => 'products'], function () {
    Route::get('/', 'ProductController@index')->name('admin.product.index');
    Route::get('/new', 'ProductController@create')->name('admin.product.new');
    Route::put('/{id}/update', 'ProductController@update')->name('admin.product.update');
-
+   Route::get('/{id}/', 'ProductController@getSubCategory')->name('admin.product.getSubCategory');
+   Route::post('/store', 'ProductController@store')->name('admin.product.store');
 });
 
 Route::get('/list-item', function () {

@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,7 +19,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="{{ asset('admin/css/font-awesome.css')  }}" rel="stylesheet">
 <script src="{{ asset('admin/js/jquery.min.js') }}"> </script>
 <!-- Mainly scripts -->
-
     <script src="{{ asset('admin/js/jquery.metisMenu.js') }}"></script>
 <script src="{{ asset('admin/js/jquery.slimscroll.min.js') }}"></script>
 <!-- Custom and plugin javascript -->

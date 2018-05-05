@@ -15,8 +15,7 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('customer_id')->unsigned();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->integer('customer_id');
             $table->datetime('date_order');
             $table->double('total');
             $table->string('status')->nullable();

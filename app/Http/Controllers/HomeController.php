@@ -28,7 +28,6 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $subCategories = SubCategory::all();
-        $subMiniCategories = SubMiniCategory::all();
-        return view('web.temp.layout', compact('categories', 'subCategories', 'subMiniCategories'));
+        return view('web.temp.layout', compact('categories', 'subCategories'));
     }
 }
