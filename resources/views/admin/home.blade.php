@@ -15,8 +15,7 @@
 </div>
 <!---->
 <!--scrolling js-->
-	<script src="{{ asset('admin/js/jquery.nicescroll.js') }}"></script>
-	<script src="{{ asset('admin/js/scripts.js') }}"></script>
 	<!--//scrolling js-->
-	<script src="{{ asset('admin/js/bootstrap.min.js') }}"> </script>
+	<script src="{{ asset('admin/js/jquery.nicescroll.js') }}"></script>
+	<!--//scrolling js-->	
 @endsection

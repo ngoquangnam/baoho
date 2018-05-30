@@ -9,7 +9,7 @@
         <div id="page-wrapper" class="gray-bg dashbard-1">
 
             <!--content-->
-            @yield('content-category')
+            @yield('content-banner')
             <div class="copy">
                 <h1></h1>
             </div>

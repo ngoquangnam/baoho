@@ -15,12 +15,12 @@
                 </ul>
             </div>
         @endif
-        <div class="alert alert-danger" v-bind:style="alert">
+        <div class="alert alert-danger" v-bind:style="alert" style="display: none;">
             <ul>
                 <li>vui lòng chọn danh mục sản phẩm</li>
             </ul>
         </div>
-        <div class="alert alert-danger" v-bind:style="alert1">
+        <div class="alert alert-danger" v-bind:style="alert" style="display: none;">
             <ul>
                 <li>vui lòng chọn danh mục con sản phẩm</li>
             </ul>
@@ -67,31 +67,6 @@
                 </form>
                 
             </div>
-            <div class="col">
-                <div class="col-sm-12 bg-success cateHeader">
-                    <h4 class="table-admin">Thêm danh mục con</h4>
-                </div>
-                <form method="post" action="{{ route('admin.subMiniCategory.store') }}" @submit="checkForm1">
-                    @csrf
-                    
-                    <div class="row cateBorder">
-                        <select name="sub_category_id"  class="select-admin" v-model="subCategory_id">
-                            <option value="" selected disabled>danh mục con</option>
-                            @foreach($subCategories as $subCategory)
-                            <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="row cateBorder">
-                        <div class="col-sm-8 form-group  cateInput">
-                            <input type="text" name="subMiniCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Thêm" >
-                        </div>
-                        <div class="col-sm-4 cateInput">
-                            <button class="btn btn-success" >Thêm</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
             
         </div>
 
@@ -111,9 +86,7 @@
                     display: 'none',
 
                 },
-                alert1:  {
-                    display: 'none',
-                }
+               
             },
             methods: {
                 checkForm: function (e) {
@@ -125,17 +98,7 @@
                 else
                     return true;                 
                 },
-                checkForm1:function(e) {
-                    
-                        
-                        if(!this.subCategory_id){
-                            this.alert1.display = 'block';
-                        }
-                        else
-                            return true;
-                    
-                    e.preventDefault();
-                }
+               
             },
             
         });

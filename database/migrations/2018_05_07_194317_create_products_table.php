@@ -15,19 +15,24 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id');
-            $table->integer('sub_category_id');
+            // $table->integer('category_id');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            // $table->integer('sub_category_id');
+            $table->integer('sub_category_id')->unsigned();
+            $table->foreign('sub_category_id')->references('id')->on('sub_categories')->onDelete('cascade');
             $table->string('name')->unique();
             $table->integer('price');
             $table->integer('warranties');
             $table->string('producer')->nullable();
-            $table->string('description');
+            $table->longText('description');
             $table->string('priority');
+            $table->string('show');
             $table->timestamps();
         });
     }
 
-    /**0
+    /**
      * Reverse the migrations.
      *
      * @return void

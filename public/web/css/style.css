@@ -4,11 +4,36 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+ul li a {
+    font-weight: 700;
+}
+.chu-chay{
+    height: 40px;
+    font-size: 30px;
+    color: red;
+}
+.h5-cart{
+    padding-right: 100px;
+}
+.ul-cart{
+    list-style: none;
+}
+.li-cart{
+    display: -webkit-box;
+}
+.table-cart{
+padding: 20px;
+padding-left: 0;
 
+}
+.table-cart table tr th {
+    text-align: center;
+}
+#PPMiniCart { position: relative; z-index: 100; }
 .left-sidebar, h2{
     z-index: 3;
     text-transform: uppercase;
-    color: #2fdab8;
+    color: #333;
     font-family: 'Open Sans', sans-serif !important;
     text-align: left;
     margin: 0 auto 30px !important;
@@ -408,7 +433,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
 }
 .dropdown-menu.columns-3 {
     min-width: 700px;
-    padding: 30px 30px;
+    padding: 30px 10px 30px 10px;
 }
 .multi-gd-img img{
 	width:100%;
@@ -429,7 +454,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
     background: none;
 }
 .navbar-nav > li {
-    margin: 0 15px 0 0;
+    margin: 0 10px 0 0;
 }
 .navbar-nav > li > a {
     padding: 26px 16px;
@@ -574,11 +599,11 @@ letter-spacing: 2px;
 /*-- //left nav --*/
 .top_nav_right {
     float: right;
-    width: 21%;
+    width: 12%;
 }
 .box_1 {
     background: #2fdab8;
-    padding: 15px 22px;
+    padding: 15px 15px;
     text-align: center;
 }
 .box_1 h3 {
@@ -612,7 +637,8 @@ a.simpleCart_empty {
 .carousel-caption {
     position: inherit;
     min-height:500px!important;
-    padding-top:10em;
+    padding-top:17em;
+    font-size: 86%;
 }
 /*-- banner --*/  
 .background-custom{    
@@ -1031,8 +1057,11 @@ color: #2fdab8;
     padding: 1em 0em 0 0em;
 }
 .contact-form {
-    background: #181919;
-    padding: 5em 3em;
+     background: #181919;
+    /* padding: 5em 3em; */
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 30px;
 }
 .contact input[type="text"], .contact input[type="email"], .contact textarea {
     font-size: 15px;
@@ -1493,7 +1522,9 @@ position:relative;
 	outline:none;
 }
 #PPMiniCart .minicart-submit {
-    display: none;
+    display: block;
+    left: 350px !important;
+    bottom: -22px !important;
 }
 #PPMiniCart .minicart-submit:hover{
 	background:#fe9126 !important;
@@ -1593,7 +1624,7 @@ button.w3view-cart {
     padding: 0 10px 1px;
     position: absolute;
     top: 0;
-    z-index:99;
+    z-index:10;
 }
 .inner-men-cart-pro {
     height: 100%;
@@ -1657,7 +1688,7 @@ button.w3view-cart {
 }
 .men-thumb-item img {
     transition: all 0.5s ease-out 0s;
-    padding: 52px 50px 20px;
+    padding: 20px 20px 20px;
 }
 .men-thumb-item:hover .men-cart-pro {
     opacity: 1;
@@ -1821,9 +1852,11 @@ ul.multi-column-dropdown li {
 }
 ul.multi-column-dropdown li a {
     text-decoration:none;
-    font-size: 0.9em;
-    color: #545454;
+    font-size: 13px;
+    color: #333;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 ul.multi-column-dropdown li a:hover{
 	color:#2fdab8;
@@ -1879,7 +1912,7 @@ ul.multi-column-dropdown li a:hover{
 }
 /*-- coupons --*/
 .coupons,.banner-bootom-w3-agileits,.new_arrivals_agile_w3ls_info{
-   padding:4em 0;
+   padding-top:3em;
 }
 .w3layouts_mail_grid {
     padding: 0 1em;
@@ -2497,11 +2530,13 @@ section#tables  p {
 }
 .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 	padding: 15px!important;
+    border: 1px solid !important;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	font-size: 0.9em;
 	color: #555;
 	border-top: none !important;
+    text-align: center;
 }
 .tab-content > .active {
 	display: block;
@@ -2916,7 +2951,7 @@ border-bottom: 1px solid #e5e3db;
 }
 
 .css-treeview a {
-    color: #999;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -3978,7 +4013,7 @@ p.w3ls_para {
 	}
 	.css-treeview{
 		float: left;
-		width: 49%;
+		width: 99%;
 	}
 	.community-poll {
 		float: right;
@@ -4134,10 +4169,9 @@ p.w3ls_para {
 	}
 	
 	.logo_agile {
-		text-align: left;
+		text-align: center;
 		margin-top: 1em;
 		padding: 0;
-		float: left;
 	}
 	.social-nav {
 		padding: 0;

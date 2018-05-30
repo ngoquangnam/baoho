@@ -9,12 +9,12 @@
         <div id="page-wrapper" class="gray-bg dashbard-1">
 
             <!--content-->
-            @yield('content-category')
+            @yield('content-bill')
             <div class="copy">
                 <h1></h1>
             </div>
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
     <!---->
     <!--scrolling js-->

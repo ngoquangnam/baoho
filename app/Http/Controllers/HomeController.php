@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\SubCategory;
 use App\SubMiniCategory;
+use App\Banner;
+use App\Product;
+use App\Color;
+use App\Size;
+use App\Material;
 
 class HomeController extends Controller
 {
@@ -14,10 +19,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 
     /**
      * Show the application dashboard.
@@ -28,6 +30,26 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $subCategories = SubCategory::all();
-        return view('web.temp.layout', compact('categories', 'subCategories'));
+        $products = Product::all();
+        $banners = Banner::all();
+
+        $featuresItems = Product::where('show', '=', 'sản phẩm bán chạy')->get();
+
+        $salesItem = Product::join('categories', 'products.category_id', 'categories.id')
+                            ->where([['products.show', 'sản phẩm nổi bật'], ['categories.name', 'Thiết bị an toàn']])->select('products.*')->get();
+        $clothes = Product::join('categories', 'products.category_id', 'categories.id')
+                            ->where([['products.show', 'sản phẩm nổi bật'], ['categories.name', 'Quần áo bảo hộ']])->select('products.*')->get();
+
+        return view('web.temp.layout', compact('categories', 'subCategories', 'products', 'banners', 'featuresItems', 'salesItem', 'clothes'));
     }
+
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+        $colors = Color::all();
+        $sizes = Size::all();
+        $materials = Material::all();
+        return view('web.temp.detail', compact('product', 'colors', 'sizes', 'materials'));
+    }
+
 }

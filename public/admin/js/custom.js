@@ -1,4 +1,3 @@
-
 $(function() {
 
     $('#side-menu').metisMenu();

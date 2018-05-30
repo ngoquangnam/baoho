@@ -10,12 +10,17 @@ class Product extends Model
 
     protected $fillable = [
         'name', 'price', 'warranties', 'producer', 'description', 'priority',
-         'category_id', 'sub_category_id'
+         'category_id', 'sub_category_id', 'show'
     ];
 
     const PRIORITY = [
         1 => 'ưu tiên cao',
         2 => 'ưu tiên thấp',
+    ];
+    const SHOW = [
+        1 => 'sản phẩm nổi bật',
+        2 => 'sản phẩm bán chạy',
+        3 => 'sản phẩm còn lại',
     ];
     public function colors()
     {
@@ -45,5 +50,10 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function billdetails()
+    {
+        return $this->hasMany(BillDetail::class);
     }
 }

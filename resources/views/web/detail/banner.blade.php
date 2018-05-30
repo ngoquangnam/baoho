@@ -6,11 +6,11 @@
         jQuery(document).ready(function ($) {
 
             var jssor_1_SlideshowTransitions = [
-              {$Duration:500,$Delay:10,$Cols:8,$Rows:4,$Clip:5,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:2049,$Easing:$Jease$.$OutQuad},
-              {$Duration:500,$Delay:10,$Cols:8,$Rows:4,$Clip:5,$SlideOut:true,$Easing:$Jease$.$OutQuad},
-              {$Duration:1000,x:-0.2,$Delay:10,$Cols:12,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Assembly:260,$Easing:{$Left:$Jease$.$InOutExpo,$Opacity:$Jease$.$InOutQuad},$Opacity:2,$Outside:true,$Round:{$Top:0.5}},
-              {$Duration:2000,y:-1,$Delay:10,$Cols:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Easing:$Jease$.$OutJump,$Round:{$Top:1.5}},
-              {$Duration:1200,x:0.2,y:-0.1,$Delay:10,$Cols:8,$Rows:4,$Clip:5,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InWave,$Top:$Jease$.$InWave,$Clip:$Jease$.$OutQuad},$Round:{$Left:1.3,$Top:2.5}}
+              {$Duration:500,$Delay:5,$Cols:8,$Rows:4,$Clip:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:2049,$Easing:$Jease$.$OutQuad},
+              {$Duration:500,$Delay:80,$Cols:8,$Rows:4,$Clip:15,$SlideOut:true,$Easing:$Jease$.$OutQuad},
+              {$Duration:1000,x:-0.2,$Delay:40,$Cols:12,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Assembly:260,$Easing:{$Left:$Jease$.$InOutExpo,$Opacity:$Jease$.$InOutQuad},$Opacity:2,$Outside:true,$Round:{$Top:0.5}},
+              {$Duration:2000,y:-1,$Delay:60,$Cols:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Easing:$Jease$.$OutJump,$Round:{$Top:1.5}},
+              {$Duration:1200,x:0.2,y:-0.1,$Delay:20,$Cols:8,$Rows:4,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InWave,$Top:$Jease$.$InWave,$Clip:$Jease$.$OutQuad},$Round:{$Left:1.3,$Top:2.5}}
             ];
 
             var jssor_1_options = {
@@ -61,7 +61,7 @@
         /* jssor slider loading skin spin css */
         .jssorl-009-spin img {
             animation-name: jssorl-009-spin;
-            animation-duration: 1s;
+            animation-duration: 1.6s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
         }
@@ -93,58 +93,20 @@
     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{{ asset('svg/loading/static-svg/spin.svg') }}" />
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+            @foreach($banners as $banner)
             <div>
                 <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
+                    <h3 style="color: red; font-weight: 700;">{{ $banner->title }}<span>{{ $banner->discount }}</span></h3>
+                    <p>{{ $banner->sub_title }}</p>
                     <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
                 </div>
-                <img data-u="image" src="{{ asset('web/images/banner1.jpg') }}" />
+                <img data-u="image" src="{{ asset($banner->image) }}" />
             </div>
-            <div>
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
-                </div>
-                <img data-u="image" src="{{ asset('web/images/banner2.jpg') }}" />
-            </div>
-            <div>
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
-                </div>
-                <img data-u="image" src="{{ asset('web/images/banner3.jpg') }}" />
-            </div>
-            <div>
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
-                </div>
-                <img data-u="image" src="{{ asset('web/images/banner4.jpg') }}" />
-            </div>
-            <div>
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
-                </div>
-                <img data-u="image" src="{{ asset('web/images/banner5.jpg') }}" />
-            </div>
-            <div>
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
-                </div>
-                <img data-u="image" src="{{ asset('web/images/banner3.jpg') }}" />
-            </div>
-        
+            
+            @endforeach
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb053" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">

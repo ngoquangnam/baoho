@@ -1,7 +1,7 @@
 @extends('admin.list-product.home')
 
 @section('content-product')
-    <div class="container add-item" >
+    <div class="container add-item">
         <div class="row">
 
             @if ($errors->any())
@@ -46,25 +46,28 @@
             </div>
         </div>
     </div>
+
+
     <div class="col-12">
         <br>
-        <h3>Thêm mới sản phẩm</h3>
+        <h3>Sửa sản phẩm</h3>
         <br>
-        <form action="{{ route('admin.product.store') }}" method="POST" enctype="multipart/form-data" class="form-product">
+        <form action="{{ route('admin.product.update', ['id' => $product->id]) }}" enctype="multipart/form-data" method="POST" class="form-product">
             @csrf
+            
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Tên sản phẩm</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="name" required="nhập tên sản phẩm">
+                    <input type="text" class="form-control" name="name" value="{{ old('name', isset($product) ? $product->name : null) }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Mức độ ưu tiên: </label>
                 <div class="col-sm-10">
-                    <select name="priority"  class="select-admin" required="">
-                        <option value="" selected disabled>Chọn mức độ ưu tiên</option>
+                    <select name="priority"  class="select-admin">
+                        <option selected disabled>{{ old('priority', isset($product) ? $product->priority : null) }}</option>
                         @foreach(App\Product::PRIORITY as $priority)
-                            <option value="{{ $priority }}">{{ $priority }}</option>
+                        <option value="{{ $priority }}">{{ $priority }}</option>
                         @endforeach
                     </select>
                  </div>
@@ -72,8 +75,8 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Vị trí hiển thị: </label>
                 <div class="col-sm-10">
-                    <select name="show"  class="select-admin" required="">
-                        <option value="" selected disabled>Chọn vị trí hiển thị</option>
+                    <select name="show"  class="select-admin">
+                        <option selected disabled>{{ old('show', isset($product) ? $product->show : null) }}</option>
                         @foreach(App\Product::SHOW as $show)
                             <option value="{{ $show }}">{{ $show }}</option>
                         @endforeach
@@ -83,8 +86,8 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Loại sản phẩm chính: </label>
                 <div class="col-sm-10">
-                    <select name="category_id"  class="select-admin" onchange="selectCategory(this)" id="category" required="">
-                        <option value="" selected disabled>Chọn loại chính</option>
+                    <select name="category_id"  class="select-admin" onchange="selectCategory(this)" id="category">
+                        <option selected disabled>{{ old('category_id', isset($product) ? $product->category->name : null) }}</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
@@ -94,8 +97,8 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Danh mục con: </label>
                 <div class="col-sm-10">
-                    <select name="sub_category_id"  class="select-admin" id="subCategory" required="">
-                        <option value="" selected disabled>danh mục con</option>
+                    <select name="sub_category_id"  class="select-admin" id="subCategory">
+                        <option value="" selected disabled>{{ old('sub_category_id', isset($product) ? $product->subCategory->name : null) }}</option>
                         
                     </select>
                  </div>
@@ -104,9 +107,14 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">chọn màu sắc: </label>
                 <div class="col-sm-10">
-                     @foreach($colors as $color)
+                     @foreach($colors as $key => $color)
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $color->id }}" name="color[]" >
+                        <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $color->id }}" name="color[]"  
+                        @foreach($product->colors as $pc)
+                        @if($color->id  == $pc->id)
+                        {{'checked'}}
+                        @endif
+                        @endforeach>
                         <label class="form-check-label" for="inlineCheckbox1">{{ $color->color }}</label>
                     </div>
                     @endforeach
@@ -116,9 +124,14 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">chọn kích cỡ: </label>
                 <div class="col-sm-10">
-                      @foreach($sizes as $size)
+                      @foreach($sizes as $key => $size)
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $size->id }}" name="size[]" >
+                        <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $size->id }}" name="size[]" 
+                        @foreach($product->sizes as $ps)
+                        @if($size->id  == $ps->id)
+                        {{'checked'}}
+                        @endif
+                        @endforeach>
                         <label class="form-check-label" for="inlineCheckbox1">{{ $size->size }}</label>
                     </div>
                     @endforeach
@@ -128,9 +141,14 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">chọn chất liệu: </label>
                 <div class="col-sm-10">
-                      @foreach($materials as $material)
+                      @foreach($materials as $key => $material)
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $material->id }}" name="material[]" >
+                        <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $material->id }}" name="material[]"  
+                        @foreach($product->materials as $pm)
+                        @if($material->id  == $pm->id)
+                        {{'checked'}}
+                        @endif
+                        @endforeach>
                         <label class="form-check-label" for="inlineCheckbox1">{{ $material->name }}</label>
                     </div>
                     @endforeach
@@ -141,19 +159,19 @@
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Giá:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="price" required="">
+                    <input type="text" class="form-control" name="price" value="{{ old('price', isset($product->price) ? $product->price : 'null' ) }}" >
                 </div>
             </div>
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Nhà sản xuất:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="producer" required="">
+                    <input type="text" class="form-control" name="producer" value="{{ old('producer', isset($product->producer) ? $product->producer : 'null' ) }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">Thời gian bảo hành:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="warranties" required="">
+                    <input type="text" class="form-control" name="warranties" value="{{ old('warranties', isset($product->warranties) ? $product->warranties : 'null' ) }}">
                 </div>
             </div>
             <div class="form-group row">
@@ -163,7 +181,9 @@
                         <div class="document-editor__toolbar"></div>
                         <div class="document-editor__editable-container" ">
                             <div class="document-editor__editable">
-                                <textarea name="description" id="editor"></textarea>
+                                <textarea name="description" id="editor" >
+                                    {!! old('description', isset($product->description) ? $product->description : 'null' ) !!}
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -174,7 +194,10 @@
                 <label  class="col-sm-2 col-form-label">Chọn ảnh cho sản phẩm:</label>
                 <div class="col-sm-10">
                     <div id="gallery">
-                            </div>
+                        @foreach($product->images as $image)
+                            <img src="{{ $image->image }}">
+                        @endforeach
+                    </div>
 
                     <div class="upload-file-wrapper">
                         <div class="add-image">
@@ -186,14 +209,14 @@
                         </div>
                         <input type="file" id="media" name="images[]"
                                class="input-file"
-                               accept="image/*" multiple/ required="">
+                               accept="image/*" multiple/">
                     </div>
             </div>
 
              <div class="form-group row">
                  <div class="col-sm-2"></div>
                  <div class="col-sm-10" style="padding-left: 160px;">
-                     <button class="btn btn-primary" type="submit">Thêm sản phẩm</button>
+                     <button class="btn btn-primary" type="submit">Sửa sản phẩm</button>
                  </div>
              </div>
         </form>
@@ -215,20 +238,25 @@
         inputFile.addEventListener('change', function (e) {
             var reader = null;
             $('#gallery').html("");
+
             if (this.files) {
+
                 for (var i = 0; i < this.files.length; i++) {
-                    reader = new FileReader();
+                    reader = new FileReader();// nhận đầu vào là file và xử lý file
+
                     reader.onload = function (event) {
-                        var newImg = '<img src="' + event.target.result + '"> ';
+                        var newImg = '<img src="' + event.target.result + '"> ';// result truy cập đến nội dung file
                         $($.parseHTML(newImg)).appendTo(gallery);
                     }
 
-                    reader.readAsDataURL(this.files[i]);
-                }
+                    reader.readAsDataURL(this.files[i]);//chuẩn bị dữ liệu để gửi file
+                }//hết for
             }
 
         });
+        // test
 
+       
         // Firefox bug fix
         inputFile.addEventListener('focus', function () {
             inputFile.classList.add('has-focus');
@@ -246,10 +274,9 @@
                     }
                 });
 
-                //var data = $('#category').val();
                 var data = obj.value;
-                // console.log('ok');
-                // console.log(data);
+
+                //var data = $('#category').val();
 
                 $.ajax({
                     type: 'get',

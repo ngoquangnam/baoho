@@ -7,8 +7,8 @@
                     <i class="fa fa-truck" aria-hidden="true"></i>
                 </div>
                 <div class="w3layouts_mail_grid_left2">
-                    <h3>FREE SHIPPING</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    <h3>GIAO HÀNG MIỄN PHÍ</h3>
+                    <p>chúng tôi giao hàng miễn phí trong phạm vi nội thành Hà Nội</p>
                 </div>
             </div>
             <div class="col-md-3 w3layouts_mail_grid_left">
@@ -16,8 +16,8 @@
                     <i class="fa fa-headphones" aria-hidden="true"></i>
                 </div>
                 <div class="w3layouts_mail_grid_left2">
-                    <h3>24/7 SUPPORT</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    <h3>Hộ trợ báo giá 24/7</h3>
+                    <p>Chúng tôi hỗ trợ tư vấn và báo giá sản phẩm 24/7</p>
                 </div>
             </div>
             <div class="col-md-3 w3layouts_mail_grid_left">
@@ -25,7 +25,7 @@
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                 </div>
                 <div class="w3layouts_mail_grid_left2">
-                    <h3>MONEY BACK GUARANTEE</h3>
+                    <h3>CHÍNH SÁCH ĐỔI TRẢ</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     <i class="fa fa-gift" aria-hidden="true"></i>
                 </div>
                 <div class="w3layouts_mail_grid_left2">
-                    <h3>FREE GIFT COUPONS</h3>
+                    <h3>GIẢM GIÁ</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
                 </div>
             </div>

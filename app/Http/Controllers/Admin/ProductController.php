@@ -93,18 +93,18 @@ class ProductController extends Controller
         {
             foreach($request->file('images') as $file)
             {
-                $nameFile = $file->getClientOriginalName();
+                
                 $path = $file->store('public/products');
-                Storage::url($path);
+                $link = Storage::url($path);
                 $image = new Image();
                 $image->product_id = $product->id;
-                $image->image = $nameFile;
+                $image->image = $link;
                 $image->save();
             }
         }
 
         
-        return redirect()->back();
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -127,7 +127,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
+        $colors = Color::all();
+        $sizes = Size::all();
+        $materials = Material::all();
+        $subCategories = SubCategory::all();
+        return view('admin.list-product.edit', compact('product', 'categories', 'colors', 'sizes', 'materials', 'subCategories'));
     }
 
     /**
@@ -139,7 +145,67 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        
+        $product->delete();
+
+        if($request->hasFile('images'))
+        {
+            foreach($product->images as $image)
+            {
+                $image->delete();
+            }
+        }
+
+        $product->fill($request->all());
+
+        $product->save();
+
+        $colors = [];
+        foreach($request->color as $pc)
+        {
+            $productColor = new ProductColor();
+            $productColor->color_id = $pc;
+            $productColor->product_id = $product->id;
+            $productColor->save();
+        }
+
+        $sizes = [];
+        $sizes = $request->size;
+        foreach($sizes as $ps)
+        {
+            $productSize = new ProductSize();
+            $productSize->size_id = $ps;
+            $productSize->product_id = $product->id;
+            $productSize->save();
+        }
+
+        $materials = [];
+        $materials = $request->material;
+        foreach($materials as $pm)
+        {
+            $productMaterial = new ProductMaterial();
+            $productMaterial->material_id = $pm;
+            $productMaterial->product_id = $product->id;
+            $productMaterial->save();
+        }
+        if($request->hasFile('images'))
+        {
+
+            foreach($request->file('images') as $file)
+            {
+                
+                $path = $file->store('public/products');
+                $link = Storage::url($path);
+                $image = new Image();
+                $image->product_id = $product->id;
+                $image->image = $link;
+                $image->save();
+            }
+        }
+
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -148,9 +214,17 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        foreach($product->images as $image)
+        {
+            $image->delete();
+        }
+        return redirect()->back();
     }
 
     public function getSubCategory(Request $request)
