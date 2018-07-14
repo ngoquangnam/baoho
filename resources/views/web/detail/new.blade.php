@@ -68,27 +68,28 @@
                 <li>Quần áo BHLĐ</li>
                 <li>Thiết bị  PCCC </li>
                 <li>Thiết bị kim khí </li>
+                <li>Thiết bị kim khí </li>
             </ul>
             <div class="resp-tabs-container">
                 <!--/tab_one-->
                 <div class="tab1">
-                @foreach($salesItem->take(8) as $product)
-                    <div class="col-md-3 product-men">
+                @foreach($salesItem->take(15) as $product)
+                    <div class="col-md-5ths col-xs-6 col-sm-4 product-men">
                         <div class="men-pro-item simpleCart_shelfItem">
                             <div class="men-thumb-item">
                                 <img src="{{asset($product->images[0]->image)}}" alt="" class="pro-image-front">
                                 <img src="{{asset($product->images[0]->image)}}" alt="" class="pro-image-back">
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="{{ route('detail', $product->id) }}" class="link-product-add-cart">Xem ngay</a>
+                                        <a href="{{ route('detail', ['id' => $product->id, 'slug' => $product->slug]) }}" class="link-product-add-cart">Xem ngay</a>
                                     </div>
                                 </div>
                                 <span class="product-new-top">New</span>
                             </div>
                             <div class="item-info-product ">
-                                <h4><a href="single.html">{{ $product->name }}</a></h4>
+                                <h4 style="display: block;height: 34px;"><a href="{{ route('detail', ['id' => $product->id, 'slug' => $product->slug]) }}">{{ $product->name }}</a></h4>
                                 <div class="info-product-price">
-                                    <span class="item_price">{{ number_format($product->price, 0, ',', '.') }}VNĐ</span>
+                                    <span class="item_price">{{ number_format($product->price, 0, ',', ',') }}VNĐ</span>
                                     <del></del>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
@@ -117,21 +118,21 @@
                 <!--//tab_one-->
                 <!--/tab_two-->
                 <div class="tab2">
-                @foreach($clothes->take(8) as $product)
-                    <div class="col-md-3 product-men">
+                @foreach($clothes->take(15) as $product)
+                    <div class="col-md-5ths product-men">
                         <div class="men-pro-item simpleCart_shelfItem">
                             <div class="men-thumb-item">
                                 <img src="{{asset($product->images[0]->image)}}" alt="" class="pro-image-front">
                                 <img src="{{asset($product->images[0]->image)}}" alt="" class="pro-image-back">
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="{{ route('detail', $product->id) }}" class="link-product-add-cart">Xem ngay</a>
+                                        <a href="{{ route('detail', ['id'=>  $product->id, 'slug' =>  $product->slug]) }}" class="link-product-add-cart">Xem ngay</a>
                                     </div>
                                 </div>
                                 <span class="product-new-top">New</span>
                             </div>
                             <div class="item-info-product ">
-                                <h4><a href="single.html">{{ $product->name }}</a></h4>
+                                <h4 style="display: block;height: 34px;"><a href="{{ route('detail', ['id' => $product->id, 'slug' => $product->slug]) }}">{{ $product->name }}</a></h4>
                                 
                                 <div class="info-product-price">
                                     <span class="item_price">{{ number_format($product->price, 0, ',', '.') }}VNĐ</span>
@@ -792,7 +793,381 @@
                         </div>
                     </div>
                 </div>
+                <div class="tab3">
+
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b1.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b1.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html">Laptop Messenger Bag</a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$140.99</span>
+                                    <del>$169.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value=" Laptop Messenger Bag"/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b2.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b2.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html">Puma Backpack</a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$127.99</span>
+                                    <del>$169.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value="Puma Backpack"/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b3.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b3.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html"> Laptop Backpack</a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$120.99</span>
+                                    <del>$189.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value=" Laptop Backpack"/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b4.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b4.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html">Travel Duffel Bag </a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$190.99</span>
+                                    <del>$259.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value="Travel Duffel Bag "/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b5.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b5.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html"> Hand-held Bag </a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$190.99</span>
+                                    <del>$259.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value=" Hand-held Bag "/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b6.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b6.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html">Butterflies Bag </a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$190.99</span>
+                                    <del>$259.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value="Butterflies Bag"/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b7.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b7.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html">Costa Swiss Bag </a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$290.99</span>
+                                    <del>$359.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value="Costa Swiss Bag"/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <img src="{{ asset('web/images/b8.jpg') }}" alt="" class="pro-image-front">
+                                <img src="{{ asset('web/images/b8.jpg') }}" alt="" class="pro-image-back">
+                                <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                    </div>
+                                </div>
+                                <span class="product-new-top">New</span>
+
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html">Noble Designs Bag </a></h4>
+                                <div class="info-product-price">
+                                    <span class="item_price">$120.99</span>
+                                    <del>$159.71</del>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart"/>
+                                            <input type="hidden" name="add" value="1"/>
+                                            <input type="hidden" name="business" value=" "/>
+                                            <input type="hidden" name="item_name" value="Noble Designs Bag "/>
+                                            <input type="hidden" name="amount" value="30.99"/>
+                                            <input type="hidden" name="discount_amount" value="1.00"/>
+                                            <input type="hidden" name="currency_code" value="USD"/>
+                                            <input type="hidden" name="return" value=" "/>
+                                            <input type="hidden" name="cancel_return" value=" "/>
+                                            <input type="submit" name="submit" value="Add to cart" class="button"/>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
     </div>
+   
 </div>
+
+<div class="clearfix"></div>
+
+<div class="new_arrivals_agile_w3ls_info" >
+    <div class="container">
+        <h3 class="wthree_text_info">THIẾT BỊ <span>AN TOÀN</span></h3>
+        <div id="horizontalTab">
+           <div class="content-bottom-in">
+                <ul id="flexiselDemo1">
+                    @foreach($salesItem->take(8) as $product)
+                    <li>
+                        <div class="w3l-specilamk">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div  class="men-thumb-item">
+                                    <a href="{{ route('detail', ['id' => $product->id, 'slug' => $product->slug]) }}">
+                                        <img src="{{asset($product->images[0]->image)}}" alt="" style="width: 100%;">
+                                    </a>
+                                    <div class="men-cart-pro">
+                                    <div class="inner-men-cart-pro">
+                                        <a href="{{ route('detail', ['id' => $product->id, 'slug' => $product->slug]) }}" class="link-product-add-cart">Xem ngay</a>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="item-info-product ">
+                                   <h4 style="display: block;height: 34px;"><a href="{{ route('detail', ['id' => $product->id, 'slug' => $product->slug]) }}">{{ $product->name }}</a></h4>
+                                    <div class="info-product-price" style="padding-top: 10px">
+                                        <span class="item_price">{{ number_format($product->price, 0, ',', '.') }}VNĐ</span>
+                                        <del></del>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                        <form action="" method="post" v-on:submit.prevent="addCart('{{$product->id}}', '{{$product->name}}', {{$product->price}}, '{{$product->images[0]->image}}')">
+                                            <fieldset>
+                                                @csrf
+                                                <input type="hidden" name="cmd" value="_cart"/>
+                                                <input type="hidden" name="add" value="1"/>
+                                                <input type="hidden" name="id" value="{{ $product->id }}"/>
+                                                <input type="hidden" name="item_name" value="{{ $product->name }}"/>
+                                                <input type="hidden" name="amount" value="{{ number_format($product->price, 0, ',', '.') }}"/>
+                                                <input type="hidden" name="discount_amount" value="0"/>
+                                                <input type="hidden" name="currency_code" value="VND"/>
+                                                <input type="hidden" name="return" value=" "/>
+                                                <input type="hidden" name="cancel_return" value=" "/>
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" data-toggle="modal" data-target="#exampleModalLong"/ style="padding: 15px 0;">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
+            </div> 
+        </div>
+    </div>
+</div>    

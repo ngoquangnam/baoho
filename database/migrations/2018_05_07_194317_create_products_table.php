@@ -22,12 +22,14 @@ class CreateProductsTable extends Migration
             $table->integer('sub_category_id')->unsigned();
             $table->foreign('sub_category_id')->references('id')->on('sub_categories')->onDelete('cascade');
             $table->string('name')->unique();
+            $table->integer('discount')->nullable();
             $table->integer('price');
-            $table->integer('warranties');
+            $table->integer('warranties')->nullable();
             $table->string('producer')->nullable();
             $table->longText('description');
             $table->string('priority');
             $table->string('show');
+            $table->text('slug');
             $table->timestamps();
         });
     }

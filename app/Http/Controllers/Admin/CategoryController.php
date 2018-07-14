@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\SubCategory;
+use App\Color;
+use App\Size;
+use App\Material;
+use App\Product;
+use App\ProductColor;
+use App\ProductSize;
+use App\ProductMaterial;
 
 class CategoryController extends Controller
 {
@@ -19,7 +26,10 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         $subCategories = SubCategory::all();
-        return view('admin.category.new',compact('categories', 'subCategories'));
+        $colors = Color::all();
+        $sizes = Size::all();
+        $materials = Material::all();
+        return view('production.category.index',compact('categories', 'subCategories', 'colors', 'sizes', 'materials'));
     }
 
     /**
@@ -103,6 +113,19 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $category->delete();
+
+        foreach($category->subCategories as $subCategories)
+        {
+            $subCategories->delete();
+        }
+
+        
+
+        
+
+        return redirect()->back();
     }
 }

@@ -25,21 +25,28 @@ Route::get('/list-item', function () {
 Route::group(['prefix' => 'colors'], function () {
     Route::post('/store', 'ColorController@store')->name('admin.color.store');
     Route::put('/{id}/update', 'ColorController@update')->name('admin.color.update');
+    Route::post('/{id}/delete', 'ColorController@delete')->name('admin.color.delete');
 });
 
 Route::group(['prefix' => 'sizes'], function () {
     Route::post('/store', 'SizeController@store')->name('admin.size.store');
     Route::put('/{id}/update', 'SizeController@update')->name('admin.size.update');
+    Route::post('/{id}/delete', 'SizeController@delete')->name('admin.size.delete');
+
 });
 
 Route::group(['prefix' => 'materials'], function () {
     Route::post('/store', 'MaterialController@store')->name('admin.material.store');
     Route::put('/{id}/update','MaterialController@update')->name('admin.material.update');
+    Route::post('/{id}/delete', 'MaterialController@delete')->name('admin.material.delete');
+    
 });
 
 Route::group(['prefix' => 'categories'], function () {
     Route::get('/', 'CategoryController@index')->name('admin.category.index');
     Route::post('/store', 'CategoryController@store')->name('admin.category.store');
+    Route::post('/{id}/delete', 'CategoryController@destroy')->name('admin.category.delete');
+    Route::post('/{id}/subDelete', 'SubCategoryController@destroy')->name('admin.subCategory.delete');
     Route::post('/store/subCategory', 'SubCategoryController@store')->name('admin.subCategory.store');
     Route::post('/store/subMiniCategory', 'SubMiniCategoryController@store')->name('admin.subMiniCategory.store');
 });

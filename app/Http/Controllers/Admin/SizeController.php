@@ -38,9 +38,13 @@ class SizeController extends Controller
         }
     }
 
-    public function detele()
+    public function detele($id)
     {
+        $size = Size::findOrFail($id);
 
+        $size->delete();
+
+        return redirect()->back();
     }
 
     public function edit(Request $request, $id)

@@ -43,7 +43,10 @@
                                             <ul class="multi-column-dropdown">
                                                 @foreach($category->subCategories as $key => $sub_category)
                                                     @if($key>=$i && $key<$i+8)
-                                                        <li><a href="mens.html">{{ $sub_category->name }}</a></li>
+                                                        @php
+                                                        $slug = str_slug($sub_category->name, '-');
+                                                        @endphp
+                                                        <li><a href="{{ route('showCategories', ['id' => $sub_category->id, 'slug' => $slug]) }}">{{ $sub_category->name }}</a></li>
                                                     @endif
                                                 @endforeach
                                             </ul>

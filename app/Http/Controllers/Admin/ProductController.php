@@ -27,7 +27,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('admin.list-product.content', compact('products'));
+        return view('production.media_gallery', compact('products'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ProductController extends Controller
         $sizes = Size::all();
         $materials = Material::all();
         $subCategories = SubCategory::all();
-        return view('admin.list-product.new', compact('categories', 'colors', 'sizes', 'materials', 'subCategories'));
+        return view('production.product.new', compact('categories', 'colors', 'sizes', 'materials', 'subCategories'));
 
     }
 
@@ -58,6 +58,7 @@ class ProductController extends Controller
         $product->fill($request->all());
         $product->category_id = $request->category_id;
         $product->sub_category_id = $request->sub_category_id;
+        $product->slug = str_slug($request->name, '-');
         $product->save();
         
         $colors = [];
@@ -133,7 +134,7 @@ class ProductController extends Controller
         $sizes = Size::all();
         $materials = Material::all();
         $subCategories = SubCategory::all();
-        return view('admin.list-product.edit', compact('product', 'categories', 'colors', 'sizes', 'materials', 'subCategories'));
+        return view('production.product.edit', compact('product', 'categories', 'colors', 'sizes', 'materials', 'subCategories'));
     }
 
     /**
@@ -159,7 +160,7 @@ class ProductController extends Controller
         }
 
         $product->fill($request->all());
-
+        $product->slug = str_slug($request->name, '-');
         $product->save();
 
         $colors = [];

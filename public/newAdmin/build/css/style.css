@@ -1,0 +1,47 @@
+.banner{
+    text-align: center;
+    padding-top: 35px !important;
+}
+.img{
+    position: relative;
+    width: 100%;
+    padding: 0px;
+}
+#gallery img
+{
+    float: left;
+    padding: 3px;
+    margin-right: 10px;
+    margin-bottom: 35px;
+    position: relative;
+    border: 1px solid #e6eaee;
+    overflow: hidden;
+    height: 145px;
+}
+.upload-file-wrapper
+{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+.image1{
+  background-image: url('../../../../admin/images/image.png'); 
+  width: 100px;
+  height: 100px;
+  background-repeat: none;
+}
+.upload-file-wrapper  input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-blurred.ck-editor__editable_inline {
+    height:  300px !important;
+}.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-focused.ck-editor__editable_inline {
+    height:  300px !important;
+}

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home ::
-        w3layouts</title>
+
+    <title>Cửa hàng bảo hộ lao Đức Sơn| Chuyên cung cấp đồ bảo hộ chất lượng cao</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <meta name="keywords" content=""/>
 <meta name="csrf-token" content="{{ csrf_token() }}">
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
@@ -28,6 +27,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution="setup_tool"
+  page_id="177187782943702"
+  theme_color="#fa3c4c"
+  logged_in_greeting="Chào bạn!"
+  logged_out_greeting="Chào bạn!">
+</div>
+
     @include('web.detail.header')
 
     @include('web.detail.header-bot')
@@ -45,18 +63,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     @include('web.detail.new')
 
-    @include('web.detail.category')
 
     @include('web.detail.grids')
 
     @include('web.detail.footer')
     
-    @include('web.detail.menu')
     
     @include('web.detail.login')
 
     </div>
     @include('web.detail.js')
-    <script async src="//static.zotabox.com/1/b/1bd0129e8f49efbd0df612de2fb4ef3d/widgets.js"></script>
+  <script src="{{ asset('web/js/jquery.flexisel.js')}}"></script>
+  <script>
+    $(window).load(function () {
+      $("#flexiselDemo1").flexisel({
+        visibleItems: 4,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: {
+          portrait: {
+            changePoint: 480,
+            visibleItems: 1
+          },
+          landscape: {
+            changePoint: 640,
+            visibleItems: 2
+          },
+          tablet: {
+            changePoint: 768,
+            visibleItems: 3
+          }
+        }
+      });
+
+    });
+  </script>
+  <script>
+  !function() {
+  var t; if (t = window.botsify = window.botsify = window.botsify || [], !t.init) 
+  return t.invoked ? void (window.console && console.error && console.error("Botsify snippet included twice.")) : (
+  t.load =function(e){  var o,n;    o=document.createElement("script"); e.type="text/javscript"; o.async=!0; 
+  o.crossorigin="anonymous";o.src="https://botsify.com/web-bot/script/"+e+"/botsify.js";
+  n=document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(o,n); });
+  }(); botsify.load('OVInAENAW5VoDEiBbKBKDKSoNb8vtDhwPbeFreDK');
+</script>
 </body>
 </html>

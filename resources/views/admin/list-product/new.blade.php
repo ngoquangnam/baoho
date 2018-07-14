@@ -103,7 +103,7 @@
 
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">chọn màu sắc: </label>
-                <div class="col-sm-10">
+                <div class="col-sm-10" >
                      @foreach($colors as $color)
                     <div class="form-check form-check-inline">
                         <input class="form-check-input checkbox" type="checkbox" id="inlineCheckbox1" value="{{ $color->id }}" name="color[]" >

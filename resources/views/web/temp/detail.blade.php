@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home ::
-        w3layouts</title>
+    <title>Cửa hàng bảo hộ lao Đức Sơn| Chuyên cung cấp đồ bảo hộ chất lượng cao</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -25,11 +24,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
           rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<link rel="stylesheet" href="{{ asset('web/css/flexslider.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('web/css/flexslider.css') }}" type="text/css" media="screen" />
 
-<!-- //for bootstrap working -->
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+    <!-- //for bootstrap working -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -42,21 +41,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     @include('web.detail.model2')
 
 <div class="page-head_agile_info_w3l">
-        <div class="container">
-            <h3>CHI TIẾT<span>SẢN PHẨM</span></h3>
-            <!--/w3_short-->
-                 <div class="services-breadcrumb">
-                        <div class="agile_inner_breadcrumb">
+    <div class="container">
+        <h3>CHI TIẾT<span>SẢN PHẨM</span></h3>
+         <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
 
-                           <ul class="w3_short">
-                                <li><a href="index.html">Trang chủ</a><i>|</i></li>
-                                <li>Liên hệ</li>
-                            </ul>
-                         </div>
-                </div>
-       <!--//w3_short-->
+               <ul class="w3_short">
+                    <li><a href="index.html">Trang chủ</a><i>|</i></li>
+                    <li>Liên hệ</li>
+                </ul>
+             </div>
+        </div>
     </div>
 </div>
+
+
 <div class="banner-bootom-w3-agileits">
     <div class="container">
          <div class="col-md-4 single-right-left ">
@@ -102,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
                     <div class="occasional">
                         <h5>Kích cỡ :</h5>
-                         @foreach($sizes as $key => $size)
+                         @foreach($product->sizes as $key => $size)
                         <div class="colr">
                             <label class="radio"><input type="checkbox" name="size"  
                         @foreach($product->sizes as $ps)
@@ -118,14 +117,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div> 
                     <div class="occasional">
                         <h5>Màu sắc :</h5>
-                         @foreach($colors as $key => $color)
+                         @foreach($product->colors as $key => $color)
                         <div class="colr">
                             <label class="radio"><input type="checkbox" name="color"  
                         @foreach($product->colors as $pc)
                         @if($color->id  == $pc->id)
                         {{'checked'}}
                         @endif
-                        @endforeach style="display:none;"><i></i>{{ $color->color }}</label>
+                        @endforeach style="display:none;"><i></i>
+                        <div style="width: 25px; height: 25px;background-color: {{ $color->color }};"></div></label>
                             
                         </div>
                         @endforeach
@@ -134,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div> 
                     <div class="occasional">
                         <h5>Chất liệu :</h5>
-                         @foreach($materials as $key => $material)
+                         @foreach($product->materials as $key => $material)
                         <div class="colr">
                             <label class="radio"><input type="checkbox" name="color" 
                         @foreach($product->materials as $pm)
@@ -150,38 +150,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="occasion-cart">
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                            <form action="#" method="post">
-                                                                <fieldset>
-                                                                    <input type="hidden" name="cmd" value="_cart">
-                                                                    <input type="hidden" name="add" value="1">
-                                                                    <input type="hidden" name="business" value=" ">
-                                                                    <input type="hidden" name="item_name" value="Wing Sneakers">
-                                                                    <input type="hidden" name="amount" value="650.00">
-                                                                    <input type="hidden" name="discount_amount" value="1.00">
-                                                                    <input type="hidden" name="currency_code" value="USD">
-                                                                    <input type="hidden" name="return" value=" ">
-                                                                    <input type="hidden" name="cancel_return" value=" ">
-                                                                    <input type="submit" name="submit" value="Add to cart" class="button">
-                                                                </fieldset>
-                                                            </form>
-                                                        </div>
+                        <form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="business" value=" ">
+                                <input type="hidden" name="item_name" value="Wing Sneakers">
+                                <input type="hidden" name="amount" value="650.00">
+                                <input type="hidden" name="discount_amount" value="1.00">
+                                <input type="hidden" name="currency_code" value="USD">
+                                <input type="hidden" name="return" value=" ">
+                                <input type="hidden" name="cancel_return" value=" ">
+                                <input type="submit" name="submit" value="Add to cart" class="button">
+                            </fieldset>
+                        </form>
+                    </div>
                                                                             
                     </div>
-                    <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
-                                                           <li class="share">Share On : </li>
-                                                            <li><a href="#" class="facebook">
-                                                                  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                                                  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-                                                            <li><a href="#" class="twitter"> 
-                                                                  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                                                  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-                                                            <li><a href="#" class="instagram">
-                                                                  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                                                  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-                                                            <li><a href="#" class="pinterest">
-                                                                  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                                                  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-                                                        </ul>
                     
               </div>
                 <div class="clearfix"> </div>
@@ -241,10 +226,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
             </div>
  </div>
-
+    
+    @include('web.detail.grids')
+    
     @include('web.detail.footer')
 
     @include('web.detail.js')
+
 
 <script type="text/javascript">
     var app1 = new Vue({

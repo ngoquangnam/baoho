@@ -48,4 +48,13 @@ class ColorController extends Controller
    		$color->save();
    		return redirect()->back();
    	}
+
+    public function delete($id)
+    {
+      $color = Color::findOrFail($id);
+
+      $color->delete();
+
+      return redirect()->back();
+    }
 }

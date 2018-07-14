@@ -1,42 +1,15 @@
 <!-- footer -->
 <div class="footer">
     <div class="footer_agile_inner_info_w3l">
-        <div class="col-md-3 footer-left">
+        <div class="col-md-3 col-xs-12 footer-left">
             <h2><a href="index.html"><span>BHLĐ</span>Đức Sơn </a></h2>
-            <p>Lorem ipsum quia dolor
-                sit amet, consectetur, adipisci velit, sed quia non
-                numquam eius modi tempora.</p>
-            <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
-                <li><a href="#" class="facebook">
-                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                </a></li>
-                <li><a href="#" class="twitter">
-                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                </a></li>
-                <li><a href="#" class="instagram">
-                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                </a></li>
-                <li><a href="#" class="pinterest">
-                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                </a></li>
-            </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1658.3545476156482!2d105.78634721845307!3d21.07745214145166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aacbf3ef62cd%3A0xe599468d1d094ce6!2zNTggUGjhuqFtIFbEg24gxJDhu5NuZywgWHXDom4gxJDhu4luaCwgVOG7qyBMacOqbSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1529991054454" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+           
         </div>
-        <div class="col-md-9 footer-right">
+        <div class="col-md-9  col-xs-12 footer-right">
             <div class="sign-grds">
                 <div class="col-md-4 sign-gd">
-                    <h4>Thông tin <span></span></h4>
-                    <ul>
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="mens.html">Men's Wear</a></li>
-                        <li><a href="womens.html">Women's wear</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="typography.html">Short Codes</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
+                    
                 </div>
 
                 <div class="col-md-5 sign-gd-two">
@@ -81,13 +54,7 @@
                     <ul>
                         <li><a href="single.html"><img src="{{ asset('web/images/t1.jpg') }}" alt=" " class="img-responsive"/></a></li>
                         <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t3.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t4.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t1.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t3.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t4.jpg') }}" alt=" " class="img-responsive"/></a></li>
+                       
                     </ul>
                 </div>
                 <div class="clearfix"></div>

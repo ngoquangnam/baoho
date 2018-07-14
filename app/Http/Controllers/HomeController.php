@@ -11,6 +11,7 @@ use App\Product;
 use App\Color;
 use App\Size;
 use App\Material;
+use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
@@ -51,5 +52,22 @@ class HomeController extends Controller
         $materials = Material::all();
         return view('web.temp.detail', compact('product', 'colors', 'sizes', 'materials'));
     }
+
+     public function showCategories($id)
+     {
+        $banners = Banner::all();
+
+        $subCategories = SubCategory::findOrFail($id);
+
+        $categories = Category::all();
+
+        $products = $subCategories->products;
+
+        foreach($products as $product)
+        {
+            array_add($product, 'image', $product->images[0]->image);
+        }
+        return view('web.temp.category', compact('categories', 'banners', 'products'));
+     }
 
 }

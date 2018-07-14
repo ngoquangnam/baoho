@@ -60,7 +60,7 @@
                         </div>
                         <input type="file" id="media" name="image"
                                class="input-file"
-                               accept="image/*" />
+                               accept="image/*" multiple="true" />
                     </div>
             </div>
 
