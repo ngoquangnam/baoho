@@ -38,7 +38,7 @@ class SizeController extends Controller
         }
     }
 
-    public function detele($id)
+    public function delete($id)
     {
         $size = Size::findOrFail($id);
 

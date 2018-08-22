@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
-    <title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home ::
-        w3layouts</title>
+    <title>Cửa hàng bảo hộ lao động Đức Sơn| Chuyên cung cấp đồ bảo hộ chất lượng cao</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!--//tags -->
     <link href="{{ asset('web/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{{ asset('web/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
@@ -28,113 +27,117 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 
-    @include('web.detail.header')
+@include('web.detail.header')
 
-    @include('web.detail.header-bot')
+@include('web.detail.header-bot')
 
-    @include('web.detail.model1')
+@include('web.detail.model1')
 
-    @include('web.detail.model2')
+@include('web.detail.model2')
+
+@include('web.detail.banner-top')
+
 
 <div class="page-head_agile_info_w3l">
-        <div class="container">
-            <h3>C<span>heckout </span></h3>
-            <!--/w3_short-->
-                 <div class="services-breadcrumb">
-                        <div class="agile_inner_breadcrumb">
+    <div class="container">
+        <h3>C<span>heckout </span></h3>
+        <!--/w3_short-->
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
 
-                           <ul class="w3_short">
-                                <li><a href="index.html">Trang chủ</a><i>|</i></li>
-                                <li>Liên hệ</li>
-                            </ul>
-                         </div>
-                </div>
-       <!--//w3_short-->
+                <ul class="w3_short">
+                    <li><a href="{{ route('home') }}">Trang chủ</a><i>|</i></li>
+                    <li>Liên hệ</li>
+                </ul>
+            </div>
+        </div>
+        <!--//w3_short-->
     </div>
 </div>
 <div class="banner_bottom_agile_info" id="app1">
     <div class="container">
-       <div class="agile-contact-grids">
-                <div class="agile-contact-left">
-                    <div class="col-md-7 address-grid">
-                        <h4>Thông tin <span>Đơn hàng</span></h4>
-                        <div class="table-cart">
-                            <table class="table table-bordered" style="border: 1px solid;">
+        <div class="agile-contact-grids">
+            <div class="agile-contact-left">
+                <div class="col-md-7 address-grid">
+                    <h4>Thông tin <span>Đơn hàng</span></h4>
+                    <div class="table-cart">
+                        <table class="table table-bordered" style="border: 1px solid;">
                             <thead>
-                                <tr>
-                                    <th scope="col">Ảnh</th>
-                                    <th scope="col">Sản phẩm</th>
-                                    <th scope="col">Số lượng</th>
-                                    <th scope="col">Đơn giá</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">Ảnh</th>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Đơn giá</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                @foreach($sessionSet['cart'] as $index => $cart)
-                                    @if($index>0)
-                                    <tr>
-                                        <th scope="row"><img src="{{asset($cart['product_image'])}}" style="width: 100px;"></th>
-                                        <td>{{$cart['item_name']}}</td>
-                                        <td>{{$cart['amount']}}</td>
-                                        <td>{{$cart['price']}}</td>
-                                    </tr>
-                                    @endif
-                                @endforeach
-                                <tr>
-                                    <th scope="row">Tổng tiền</th>
-                                    <td colspan="1"></td>
-                                    <td colspan="2">{{$sessionSet['total']}}VNĐ</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                        </div>
-                    </div>
-                    <div class="col-md-5 contact-form">
-                        <h4 class="white-w3ls">Thông tin <span>Khách hàng</span></h4>
-                        <form action="{{route('buy')}}" method="post">
-                            @csrf
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="name" required="">
-                                <label>Tên</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="text" name="address" required=""> 
-                                <label>Địa chỉ</label>
-                                <span></span>
-                            </div> 
-                            <div class="styled-input">
-                                <input type="text" name="phone" required="" v-model="phone">
-                                <label>Số Điện Thoại</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <textarea name="note" required=""></textarea>
-                                <label>Lưu ý</label>
-                                <span></span>
-                            </div>
-                            <input type="hidden" name="total" value="{{$sessionSet['total']}}">
-
                             @foreach($sessionSet['cart'] as $index => $cart)
                                 @if($index>0)
-
-                                    <input type="hidden" name="items[]" value="{{$cart['product_id']}}, {{$cart['amount']}}"> 
-                                @endif  
+                                    <tr>
+                                        <th scope="row"><img src="{{asset($cart['product_image'])}}"
+                                                             style="width: 100px;"
+                                                             alt="{{str_slug($cart['item_name'], '-')}}"></th>
+                                        <td>{{$cart['item_name']}}</td>
+                                        <td>{{$cart['amount']}}</td>
+                                        <td>{{ number_format($cart['price'], 0, ',', ',') }} vnđ</td>
+                                    </tr>
+                                @endif
                             @endforeach
+                            <tr>
+                                <th scope="row">Tổng tiền</th>
+                                <td colspan="1"></td>
+                                <td colspan="2">{{ number_format($sessionSet['total'], 0, ',', ',') }} vnđ</td>
+                            </tr>
 
-                            <input type="submit" value="Mua Hàng">
-                        </form>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="col-md-5 contact-form">
+                    <h4 class="white-w3ls">Thông tin <span>Khách hàng</span></h4>
+                    <form action="{{route('buy')}}" method="post">
+                        @csrf
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" name="name" required="">
+                            <label>Tên</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="address" required="">
+                            <label>Địa chỉ</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="phone" required="" v-model="phone">
+                            <label>Số Điện Thoại</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <textarea name="note" required=""></textarea>
+                            <label>Lưu ý</label>
+                            <span></span>
+                        </div>
+                        <input type="hidden" name="total" value="{{$sessionSet['total']}}">
+
+                        @foreach($sessionSet['cart'] as $index => $cart)
+                            @if($index>0)
+
+                                <input type="hidden" name="items[]"
+                                       value="{{$cart['product_id']}}, {{$cart['amount']}}">
+                            @endif
+                        @endforeach
+
+                        <input type="submit" value="Mua Hàng">
+                    </form>
+                </div>
             </div>
-       </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
 </div>
+</div>
 
-    @include('web.detail.footer')
-
-    @include('web.detail.js')
+@include('web.detail.footer')
 
 <script type="text/javascript">
     var app1 = new Vue({
@@ -143,12 +146,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             phone: '',
         },
         watch: {
-            phone: function(val){
-                if(isNaN(val))
+            phone: function (val) {
+                if (isNaN(val))
                     alert('vui lòng nhập đúng số điện thoại');
             }
         }
     })
 </script>
-</body>
-</html>
+<script type="text/javascript" src="{{ asset('web/js/jquery-2.1.4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('web/js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ asset('web/js/popper.min.js') }

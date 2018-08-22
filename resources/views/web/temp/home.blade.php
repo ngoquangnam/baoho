@@ -15,12 +15,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!--//tags -->
     <link href="{{ asset('web/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{{ asset('web/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                            aria-hidden="true"></i> Sign Up </a></li>
             <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
             <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a
-                    href="mailto:info@example.com">info@example.com</a></li>
+                        href="mailto:info@example.com">info@example.com</a></li>
         </ul>
     </div>
 </div>
@@ -67,21 +67,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="social-nav model-3d-0 footer-social w3_agile_social">
                 <li class="share">Share On :</li>
                 <li><a href="#" class="facebook">
-                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                    </a></li>
                 <li><a href="#" class="twitter">
-                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    </a></li>
                 <li><a href="#" class="instagram">
-                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                    </a></li>
                 <li><a href="#" class="pinterest">
-                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                    </a></li>
             </ul>
 
 
@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav menu__list">
                             <li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Home
-                                <span class="sr-only">(current)</span></a></li>
+                                    <span class="sr-only">(current)</span></a></li>
                             <li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
                             <li class="dropdown menu__item">
                                 <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
@@ -149,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li class="dropdown menu__item">
                                 <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">Women's wear <span
-                                        class="caret"></span></a>
+                                            class="caret"></span></a>
                                 <ul class="dropdown-menu multi-column columns-3">
                                     <div class="agile_inner_drop_nav_info">
                                         <div class="col-sm-3 multi-gd-img">
@@ -175,7 +175,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </ul>
                                         </div>
                                         <div class="col-sm-6 multi-gd-img multi-gd-text ">
-                                            <a href="womens.html"><img src="{{ asset('web/images/top1.jpg') }}" alt=" "/></a>
+                                            <a href="womens.html"><img src="{{ asset('web/images/top1.jpg') }}"
+                                                                       alt=" "/></a>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -236,21 +237,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </form>
                     <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
                         <li><a href="#" class="facebook">
-                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            </a></li>
                         <li><a href="#" class="twitter">
-                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            </a></li>
                         <li><a href="#" class="instagram">
-                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            </a></li>
                         <li><a href="#" class="pinterest">
-                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            </a></li>
                     </ul>
                     <div class="clearfix"></div>
                     <p><a href="#" data-toggle="modal" data-target="#myModal2"> Don't have an account?</a></p>
@@ -302,21 +303,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </form>
                     <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
                         <li><a href="#" class="facebook">
-                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            </a></li>
                         <li><a href="#" class="twitter">
-                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            </a></li>
                         <li><a href="#" class="instagram">
-                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            </a></li>
                         <li><a href="#" class="pinterest">
-                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                        </a></li>
+                                <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            </a></li>
                     </ul>
                     <div class="clearfix"></div>
                     <p><a href="#">By clicking register, I agree to your terms</a></p>
@@ -2078,21 +2079,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 numquam eius modi tempora.</p>
             <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                 <li><a href="#" class="facebook">
-                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                    </a></li>
                 <li><a href="#" class="twitter">
-                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    </a></li>
                 <li><a href="#" class="instagram">
-                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                    </a></li>
                 <li><a href="#" class="pinterest">
-                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                </a></li>
+                        <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                    </a></li>
             </ul>
         </div>
         <div class="col-md-9 footer-right">
@@ -2149,15 +2150,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-3 sign-gd flickr-post">
                     <h4>Flickr <span>Posts</span></h4>
                     <ul>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t1.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t3.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t4.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t1.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t3.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" " class="img-responsive"/></a></li>
-                        <li><a href="single.html"><img src="{{ asset('web/images/t4.jpg') }}" alt=" " class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t1.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t3.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t4.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t1.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t3.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t2.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
+                        <li><a href="single.html"><img src="{{ asset('web/images/t4.jpg') }}" alt=" "
+                                                       class="img-responsive"/></a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -2246,7 +2256,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="clearfix"></div>
                     </div>
                     <p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-                        Policy</a></p>
+                            Policy</a></p>
                 </div>
             </div>
         </div>

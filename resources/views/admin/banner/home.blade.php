@@ -14,7 +14,7 @@
                 <h1></h1>
             </div>
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
     <!---->
     <!--scrolling js-->

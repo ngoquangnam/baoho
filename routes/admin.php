@@ -1,15 +1,15 @@
 <?php
 
-Route::get('/', 'HomeController@index')->name('admin.home');
+Route::get('/home', 'HomeController@index')->name('admin.home');
 
 Route::group(['prefix' => 'products'], function () {
-   Route::get('/', 'ProductController@index')->name('admin.product.index');
-   Route::get('/new', 'ProductController@create')->name('admin.product.new');
-   Route::post('/{id}/update', 'ProductController@update')->name('admin.product.update');
-   Route::get('/{id}/', 'ProductController@getSubCategory')->name('admin.product.getSubCategory');
-   Route::post('/store', 'ProductController@store')->name('admin.product.store');
-   Route::post('/{id}/delete', 'ProductController@delete')->name('admin.product.delete');
-   Route::get('/{id}/edit', 'ProductController@edit')->name('admin.product.edit');
+    Route::get('/', 'ProductController@index')->name('admin.product.index');
+    Route::get('/new', 'ProductController@create')->name('admin.product.new');
+    Route::post('/{id}/update', 'ProductController@update')->name('admin.product.update');
+    Route::get('/{id}/', 'ProductController@getSubCategory')->name('admin.product.getSubCategory');
+    Route::post('/store', 'ProductController@store')->name('admin.product.store');
+    Route::post('/{id}/delete', 'ProductController@delete')->name('admin.product.delete');
+    Route::get('/{id}/edit', 'ProductController@edit')->name('admin.product.edit');
 });
 
 Route::get('/list-item', function () {
@@ -37,9 +37,9 @@ Route::group(['prefix' => 'sizes'], function () {
 
 Route::group(['prefix' => 'materials'], function () {
     Route::post('/store', 'MaterialController@store')->name('admin.material.store');
-    Route::put('/{id}/update','MaterialController@update')->name('admin.material.update');
+    Route::put('/{id}/update', 'MaterialController@update')->name('admin.material.update');
     Route::post('/{id}/delete', 'MaterialController@delete')->name('admin.material.delete');
-    
+
 });
 
 Route::group(['prefix' => 'categories'], function () {
@@ -52,21 +52,21 @@ Route::group(['prefix' => 'categories'], function () {
 });
 
 Route::resource('banner', 'BannerController')->names([
-  'create' => 'admin.banner.create',
-  'store' => 'admin.banner.store',
-  'destroy' => 'admin.banner.delete',
-  'index' => 'admin.banner.index',
-  'update' => 'admin.banner.update',
-  'edit' => 'admin.banner.edit',
-  'show' => 'admin.banner.show',
+    'create' => 'admin.banner.create',
+    'store' => 'admin.banner.store',
+    'destroy' => 'admin.banner.delete',
+    'index' => 'admin.banner.index',
+    'update' => 'admin.banner.update',
+    'edit' => 'admin.banner.edit',
+    'show' => 'admin.banner.show',
 ]);
 
 Route::resource('bill', 'BillController')->names([
-  'create' => 'admin.bill.create',
-  'store' => 'admin.bill.store',
-  'destroy' => 'admin.bill.delete',
-  'index' => 'admin.bill.index',
-  'update' => 'admin.bill.update',
-  'edit' => 'admin.bill.edit',
-  'show' => 'admin.bill.show',
+    'create' => 'admin.bill.create',
+    'store' => 'admin.bill.store',
+    'destroy' => 'admin.bill.delete',
+    'index' => 'admin.bill.index',
+    'update' => 'admin.bill.update',
+    'edit' => 'admin.bill.edit',
+    'show' => 'admin.bill.show',
 ]);

@@ -10,7 +10,7 @@ class Product extends Model
 
     protected $fillable = [
         'name', 'price', 'warranties', 'producer', 'description', 'priority',
-         'category_id', 'sub_category_id', 'show'
+        'category_id', 'sub_category_id', 'show', 'link_video', 'discount'
     ];
 
     const PRIORITY = [
@@ -22,6 +22,7 @@ class Product extends Model
         2 => 'sản phẩm bán chạy',
         3 => 'sản phẩm còn lại',
     ];
+
     public function colors()
     {
         return $this->belongsToMany(Color::class, 'product_colors');

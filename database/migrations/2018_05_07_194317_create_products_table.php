@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->string('priority');
             $table->string('show');
             $table->text('slug');
+            $table->text('link_video')->nullable();
             $table->timestamps();
         });
     }

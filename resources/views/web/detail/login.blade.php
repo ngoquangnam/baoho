@@ -61,7 +61,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-                        Policy</a></p>
+                            Policy</a></p>
                 </div>
             </div>
         </div>

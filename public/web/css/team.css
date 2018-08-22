@@ -62,19 +62,24 @@
 }
 @media(max-width:800px){
 	  .team-grids {
-		width: 50%;
+		width: 100%;
 		float: left;
 		    margin-bottom: 4em;
 	}
 }
 @media(max-width:768px){
 	.team-grids {
-		width: 50%;
+		width: 100%;
 		float: left;
 		margin-bottom: 2em;
 	}
 }
 @media(max-width:414px){
+    .team-grids {
+        width: 100%;
+        float: none;
+    }
+@media(max-width:300px){
 	.team-grids {
 		width: 100%;
 		float: none;

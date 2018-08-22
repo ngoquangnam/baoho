@@ -16,22 +16,23 @@
             </tr>
             </thead>
             <tbody>
-                @foreach($banners as $index => $banner)
-            <tr>
-                <th scope="row">{{ $index+1 }}</th>
-                <th scope="row" class="table-image"><img src="{{ asset($banner->image) }}" class="img"></th>
-                <th scope="row">{{ $banner->title }}</th>
-                <th scope="row">{{ $banner->discount }}</th>
-                <th scope="row">{{ $banner->sub_title }}</th>
-                <th scope="row">
-                    <form action="{{ route('admin.banner.delete', $banner->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button class="btn btn-danger" type="submit">Xóa</button>
-                    </form>
-                </th>
-                <th scope="row"><a href="{{ route('admin.banner.edit', $banner->id) }}" class="btn btn-primary">Sửa</a></th>
-            </tr>
+            @foreach($banners as $index => $banner)
+                <tr>
+                    <th scope="row">{{ $index+1 }}</th>
+                    <th scope="row" class="table-image"><img src="{{ asset($banner->image) }}" class="img"></th>
+                    <th scope="row">{{ $banner->title }}</th>
+                    <th scope="row">{{ $banner->discount }}</th>
+                    <th scope="row">{{ $banner->sub_title }}</th>
+                    <th scope="row">
+                        <form action="{{ route('admin.banner.delete', $banner->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger" type="submit">Xóa</button>
+                        </form>
+                    </th>
+                    <th scope="row"><a href="{{ route('admin.banner.edit', $banner->id) }}"
+                                       class="btn btn-primary">Sửa</a></th>
+                </tr>
             @endforeach
             </tbody>
         </table>

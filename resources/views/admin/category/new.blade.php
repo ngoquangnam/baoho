@@ -25,7 +25,7 @@
                 <li>vui lòng chọn danh mục con sản phẩm</li>
             </ul>
         </div>
-        <div class="row" >
+        <div class="row">
             <div class="col">
                 <div class="col-sm-12 bg-success cateHeader">
                     <h4 class="table-admin">Thêm danh mục chính</h4>
@@ -34,7 +34,8 @@
                     <form method="post" action="{{ route('admin.category.store') }}" class="cateForm">
                         @csrf
                         <div class="col-sm-8 form-group cateInput">
-                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Thêm" v-model="message">
+                            <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Thêm" v-model="message">
                         </div>
                         <div class="col-sm-4 cateInput">
                             <button class="btn btn-success">Thêm</button>
@@ -54,27 +55,28 @@
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
-                        </select>    
+                        </select>
                     </div>
                     <div class="row cateBorder">
                         <div class="col-sm-8 form-group  cateInput">
-                            <input type="text" name="subCategory" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Thêm" >
+                            <input type="text" name="subCategory" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Thêm">
                         </div>
                         <div class="col-sm-4 cateInput">
                             <button class="btn btn-success" type="submit">Thêm</button>
                         </div>
                     </div>
                 </form>
-                
+
             </div>
-            
+
         </div>
 
     </div>
 
 
     <script type="text/javascript">
-        
+
         new Vue({
             el: '#category',
             data: {
@@ -86,21 +88,21 @@
                     display: 'none',
 
                 },
-               
+
             },
             methods: {
                 checkForm: function (e) {
-                
-                if (!this.category_id){
-                    this.alert.display = 'block';
-                    e.preventDefault();
-                }
-                else
-                    return true;                 
+
+                    if (!this.category_id) {
+                        this.alert.display = 'block';
+                        e.preventDefault();
+                    }
+                    else
+                        return true;
                 },
-               
+
             },
-            
+
         });
 
     </script>

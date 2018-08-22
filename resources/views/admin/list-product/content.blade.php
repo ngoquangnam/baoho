@@ -19,25 +19,27 @@
             </tr>
             </thead>
             <tbody>
-                @foreach($products as $index => $product)
-            <tr>
-                <th scope="row">{{ $index+1 }}</th>
-                <th scope="row" class="table-image"><img src="{{ asset($product->images->first->image->image) }}" class="img"></th>
-                <th scope="row">{{ $product->name }}</th>
-                <th scope="row">{{ $product->price }}</th>
-                <th scope="row">{{ $product->category->name }}</th>
-                <th scope="row">{{ $product->subCategory->name }}</th>
-                <th scope="row">{{ $product->producer }}</th>
-                <th scope="row">{{ $product->warranties }}</th>
-                <th scope="row">
-                    <form action="{{ route('admin.product.delete', $product->id) }}" method="post">
-                        @csrf
-                        
-                        <button class="btn btn-danger" type="submit">Xóa</button>
-                    </form>
-                </th>
-                <th scope="row"><a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-primary">Sửa</a></th>
-            </tr>
+            @foreach($products as $index => $product)
+                <tr>
+                    <th scope="row">{{ $index+1 }}</th>
+                    <th scope="row" class="table-image"><img src="{{ asset($product->images->first->image->image) }}"
+                                                             class="img"></th>
+                    <th scope="row">{{ $product->name }}</th>
+                    <th scope="row">{{ $product->price }}</th>
+                    <th scope="row">{{ $product->category->name }}</th>
+                    <th scope="row">{{ $product->subCategory->name }}</th>
+                    <th scope="row">{{ $product->producer }}</th>
+                    <th scope="row">{{ $product->warranties }}</th>
+                    <th scope="row">
+                        <form action="{{ route('admin.product.delete', $product->id) }}" method="post">
+                            @csrf
+
+                            <button class="btn btn-danger" type="submit">Xóa</button>
+                        </form>
+                    </th>
+                    <th scope="row"><a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-primary">Sửa</a>
+                    </th>
+                </tr>
             @endforeach
             </tbody>
         </table>

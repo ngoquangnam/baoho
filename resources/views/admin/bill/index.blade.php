@@ -16,20 +16,20 @@
             </tr>
             </thead>
             <tbody>
-                @foreach($bills as $index => $bill)
-            <tr>
-                <th scope="row">{{ $index+1 }}</th>
-                <th scope="row"><a href="{{ route('admin.bill.show', $bill->id) }}">{{$bill->date_order}}</a></th>
-                <th scope="row">{{ $bill->customer->name }}</th>
-                <th scope="row">{{ $bill->billdetail->count() }}</th>
-                <th scope="row">{{ $bill->total }}</th>
-                <th scope="row">{{ $bill->status }}</th>
-                <th scope="row">
-                    <form action="{{ route('admin.bill.edit', $bill->id) }}" method="post">
-                        @csrf
-                        <button class="btn btn-success" type="submit">update</button>
-                    </form>
-                </th>
+            @foreach($bills as $index => $bill)
+                <tr>
+                    <th scope="row">{{ $index+1 }}</th>
+                    <th scope="row"><a href="{{ route('admin.bill.show', $bill->id) }}">{{$bill->date_order}}</a></th>
+                    <th scope="row">{{ $bill->customer->name }}</th>
+                    <th scope="row">{{ $bill->billdetail->count() }}</th>
+                    <th scope="row">{{ $bill->total }}</th>
+                    <th scope="row">{{ $bill->status }}</th>
+                    <th scope="row">
+                        <form action="{{ route('admin.bill.edit', $bill->id) }}" method="post">
+                            @csrf
+                            <button class="btn btn-success" type="submit">update</button>
+                        </form>
+                    </th>
             @endforeach
             </tbody>
         </table>

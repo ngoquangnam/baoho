@@ -8,7 +8,7 @@
                                                                            aria-hidden="true"></i> Sign Up </a></li>
             <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0914 661 829</li>
             <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a
-                    href="mailto:info@example.com">phamson10088@gmail.com</a></li>
+                        href="mailto:info@example.com">baohoducson@gmail.com</a></li>
         </ul>
     </div>
 </div>
