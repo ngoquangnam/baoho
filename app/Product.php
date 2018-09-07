@@ -10,7 +10,7 @@ class Product extends Model
 
     protected $fillable = [
         'name', 'price', 'warranties', 'producer', 'description', 'priority',
-        'category_id', 'sub_category_id', 'show', 'link_video', 'discount'
+        'category_id', 'sub_category_id', 'show', 'link_video', 'discount','material'
     ];
 
     const PRIORITY = [

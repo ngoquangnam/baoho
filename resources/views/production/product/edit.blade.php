@@ -131,6 +131,15 @@
                                         @endforeach
                                     </div>
                                 </div>
+
+                                <div class="control-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input id="tags_1" type="text" class="tags form-control" value="{{ old('material',isset($product) ? $product->material : null) }}" name="materials" />
+                                      <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                    </div>
+                                  </div>
+
                                 <div class="form-group">
                                     <label class="col-md-3 col-sm-3 col-xs-12 control-label">Chọn chất liệu
                                     </label>

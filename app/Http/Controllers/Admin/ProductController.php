@@ -59,6 +59,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->sub_category_id = $request->sub_category_id;
         $product->slug = str_slug($request->name, '-');
+        $product->material = $request->materials;
         $product->save();
         
         $colors = [];
@@ -160,6 +161,7 @@ class ProductController extends Controller
         }
 
         $product->fill($request->all());
+        $product->material = $request->materials;
         $product->slug = str_slug($request->name, '-');
         $product->save();
 

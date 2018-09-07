@@ -124,18 +124,36 @@
                                         @endforeach
                                     </div>
                                 </div>
+
+                                <div class="control-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input id="tags_1" type="text" class="tags form-control" name="materials" />
+                                      <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                    </div>
+                                  </div>
+
                                 <div class="form-group">
                                     <label class="col-md-3 col-sm-3 col-xs-12 control-label">Chọn chất liệu
                                     </label>
 
                                     <div class="col-md-9 col-sm-9 col-xs-12" style="display: inline-flex">
-                                        @foreach($materials as $material)
-                                            <div class="checkbox form-check form-check-inline">
+                                        @foreach($materials as $index => $material)
+                                        @if($index<7)
+                                            <div class="checkbox form-check form-check-inline col-md-6">
                                                 <label>
                                                     <input type="checkbox" class="flat" value="{{ $material->id }}"
                                                            name="material[]"> {{  $material->name  }}
                                                 </label>
                                             </div>
+                                        @else
+                                            <div class="checkbox form-check form-check-inline col-md-6">
+                                                <label>
+                                                    <input type="checkbox" class="flat" value="{{ $material->id }}"
+                                                           name="material[]"> {{  $material->name  }}
+                                                </label>
+                                            </div>
+                                        @endif
                                         @endforeach
                                     </div>
                                 </div>
